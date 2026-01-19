@@ -9,7 +9,8 @@ The dashboard provides a clear overview of sales performance, customer segments,
 
 ## 🖼️ Dashboard Preview
 
-<img width="1236" height="695" alt="image" src="https://github.com/user-attachments/assets/90cc4597-ec63-4f6a-a55c-ef385f5c5be1" />
+<img width="1238" height="696" alt="image" src="https://github.com/user-attachments/assets/d32d458c-6386-40cf-8319-9fbdebf2023b" />
+
 
 ---
 
