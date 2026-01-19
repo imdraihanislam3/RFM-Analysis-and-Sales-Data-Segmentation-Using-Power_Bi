@@ -56,4 +56,4 @@ Customers are segmented based on RFM scoring logic.
 ## 📬 Contact
 **Md. Raihan Islam**  
 Data Analyst  
-📧 LinkedIn: (add your profile link)
+📧 LinkedIn: https://www.linkedin.com/in/imdraihanislam3/
