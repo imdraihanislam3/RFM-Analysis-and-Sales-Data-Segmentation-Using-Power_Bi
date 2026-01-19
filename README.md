@@ -8,7 +8,8 @@ The dashboard provides a clear overview of sales performance, customer segments,
 ---
 
 ## 🖼️ Dashboard Preview
-![Sales RFM Dashboard](assets/dashboard.png)
+![Sales RFM Dashboard](<img width="1236" height="695" alt="image" src="https://github.com/user-attachments/assets/25e079da-7184-48db-960e-94863924c287" />
+)
 
 ---
 
