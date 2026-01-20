@@ -2,13 +2,16 @@
 
 
 #KPI’s:
+
 Total_Customers = DISTINCTCOUNT('Superstore 2025'[Customer ID])
 Total_sales = SUM('Superstore 2025'[Sales])
 AvgRecency = AVERAGE(RFM_Calculation[Recency])
 AvgFrequency = AVERAGE(RFM_Calculation[Frequency])
 AvgMonetary = AVERAGE(RFM_Calculation[Monetary])
 
-#DAX for Creating Date Table
+
+#DAX for Creating Date Table:
+
 DateTable = 
 ADDCOLUMNS(
     CALENDAR(DATE(2021,1,1),DATE(2025,12,31)),
@@ -24,9 +27,7 @@ ADDCOLUMNS(
     )
 
 
-
-
-#DAX for Creating RFM Calculation Table
+#DAX for Creating RFM Calculation Table:
 
 RFM_Calculation =  
  SUMMARIZE(
@@ -39,9 +40,12 @@ RFM_Calculation =
     "Frequency", DISTINCTCOUNT('Superstore 2025'[Order ID]),
     "Monetary", SUM('Superstore 2025'[Sales]))
 
-#DAX Calc Column within RFM Calculation Table
+
+
+#DAX Calc Column within RFM Calculation Table:
 
 #Frequency_Score :
+
 Frequency_Score = 
 var Rankfrq=
 RANKX(
@@ -52,7 +56,9 @@ var Totalcust=COUNTROWS(ALL(RFM_Calculation))
 RETURN
     CEILING(DIVIDE(Rankfrq * 5, Totalcust),1)
 
+
 #Monetary_Score :
+
 Monetary_Score = 
 var Rankmon=
 RANKX(
@@ -63,7 +69,9 @@ var Totalcust=COUNTROWS(ALL(RFM_Calculation))
 RETURN
     CEILING(DIVIDE(Rankmon * 5, Totalcust),1)
 
+
 #Recency_Score :
+
  Recency_Score = 
 var Rankrecency=
 RANKX(
@@ -74,7 +82,9 @@ var Totalcust=COUNTROWS(ALL(RFM_Calculation))
 RETURN
     CEILING(DIVIDE(Rankrecency * 5, Totalcust),1)
 
+
 #Customer_Segmentation :
+
 Customer_Segment = 
     Switch  (
         TRUE(),
@@ -104,6 +114,7 @@ Customer_Segment =
     "Others"
 )
 
+
 #YOY Variance:
 
 YoY SalesVariance = 
@@ -122,6 +133,7 @@ YoY SalesVariance =
 
 
 #YoY FrequencyVar :
+
 YoY FrequencyVar = 
  VAR LY = CALCULATE([AvgFrequency], SAMEPERIODLASTYEAR(Date_Table[Date]))
  VAR LYFormatted = FORMAT(LY, "#,0")
@@ -138,7 +150,10 @@ RETURN
     UNICHAR(9660) & " " & yoyCalcFormatted  & " | LY " & LYFormatted
  )
 
-#YoY MonetaryVar : 
+
+
+#YoY MonetaryVar :
+
  YoY MonetaryVar = 
  VAR LY = CALCULATE([AvgMonetary], SAMEPERIODLASTYEAR(Date_Table[Date]))
  VAR LYFormatted = FORMAT(LY/1000, "$#,0.00") & "K"
@@ -156,7 +171,8 @@ RETURN
  )
 
 
-#YoY RecencyVar = 
+#YoY RecencyVar:
+
 YoY RecencyVar = 
  VAR LY = CALCULATE([AvgRecency], SAMEPERIODLASTYEAR(Date_Table[Date]))
  VAR LYFormatted = FORMAT(LY, "#,0")
