@@ -47,10 +47,14 @@ Customers are segmented based on RFM scoring logic.
 
 ---
 
-## 🚀 Insights Generated
-- Identified high-value customers contributing maximum revenue
-- Highlighted at-risk customers for re-engagement
-- Observed monthly revenue and customer trends
+## 🚀 Insights & Sugested Actions
+
+-- A small group of high-value customers (Champions & Loyal Customers) generates a disproportionate share of revenue.
+Suggested Action:  Prioritize retention through loyalty programs, exclusive offers, and personalized engagement.
+-- A growing “At Risk” customer segment indicates potential revenue loss due to churn.
+Suggested Action:  Launch targeted win-back and re-engagement campaigns to retain these customers before churn.
+-- Revenue fluctuations are primarily driven by changes in active customer volume rather than spending per customer.
+Suggested Action:  Strengthen customer acquisition and activation strategies during low-performance periods.
 
 ---
 
